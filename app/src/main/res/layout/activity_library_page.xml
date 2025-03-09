@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/wood_background"
+    tools:context=".LibraryPage">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <ImageButton
+                android:id="@+id/menu_button"
+                android:layout_width="55dp"
+                android:layout_height="49dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="0dp"
+                android:backgroundTint="@android:color/transparent"
+                android:clickable="true"
+                android:focusable="true"
+                android:importantForAccessibility="no"
+                android:padding="8dp"
+                android:src="@drawable/btn_menu"
+                tools:ignore="ImageContrastCheck" />
+
+            <TextView
+                android:id="@+id/username_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:fontFamily="@font/bobby_jones"
+                android:text="Hello, Guest!"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <EditText
+                android:id="@+id/search_bar"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:hint="Search"
+                android:textColor="@color/white"
+                android:background="@drawable/transparent_button"
+                android:padding="10dp"
+                android:textColorHint="@color/white"
+                android:drawableEnd="@drawable/btn_search"
+                tools:ignore="Autofill,DuplicateSpeakableTextCheck,HardcodedText,TextFields,VisualLintTextFieldSize" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:indeterminate="true"
+                app:layout_constraintTop_toBottomOf="@id/book_grid"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp"/>
+
+        </LinearLayout>
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="4dp"
+                tools:ignore="VisualLintBounds">
+
+                <Button
+                    android:id="@+id/filter_all"
+                    android:layout_width="120dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/transparent_button"
+                    android:padding="8dp"
+                    android:text="Show All"
+                    android:fontFamily="@font/bobby_jones"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    tools:ignore="ButtonStyle,HardcodedText" />
+
+                <Button
+                    android:id="@+id/filter_scifi"
+                    android:layout_width="120dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/transparent_button"
+                    android:padding="8dp"
+                    android:text="🚀 Sci-Fi"
+                    android:fontFamily="@font/bobby_jones"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    tools:ignore="ButtonStyle,HardcodedText" />
+
+                <Button
+                    android:id="@+id/filter_drama"
+                    android:layout_width="120dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/transparent_button"
+                    android:fontFamily="@font/bobby_jones"
+                    android:padding="8dp"
+                    android:text="🎭 Drama"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:ignore="ButtonStyle,HardcodedText" />
+
+                <Button
+                    android:id="@+id/filter_nonfiction"
+                    android:layout_width="150dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/transparent_button"
+                    android:padding="8dp"
+                    android:text="📚 Non-fiction"
+                    android:fontFamily="@font/bobby_jones"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    tools:ignore="ButtonStyle,HardcodedText" />
+
+                <Button
+                    android:id="@+id/filter_selfhelp"
+                    android:layout_width="120dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/transparent_button"
+                    android:padding="8dp"
+                    android:text="💡 Self-Help"
+                    android:fontFamily="@font/bobby_jones"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    tools:ignore="ButtonStyle,HardcodedText" />
+
+                <Button
+                    android:id="@+id/filter_romance"
+                    android:layout_width="120dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/transparent_button"
+                    android:padding="8dp"
+                    android:text="💙 Romance"
+                    android:fontFamily="@font/bobby_jones"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    tools:ignore="ButtonStyle,HardcodedText" />
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/book_grid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:descendantFocusability="blocksDescendants"
+            android:paddingTop="10dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:clipToPadding="false"/>
+
+    </LinearLayout>
+
+    <!-- Navigation Drawer -->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:menu="@menu/drawer_menu"
+        tools:ignore="VisualLintBounds" />
+</androidx.drawerlayout.widget.DrawerLayout>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:gravity="center"
+    android:layout_margin="8dp">
+
+    <ImageView
+        android:id="@+id/book_image"
+        android:layout_width="120dp"
+        android:layout_height="180dp"
+        android:scaleType="fitCenter"
+        android:layout_marginBottom="8dp"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/book_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:text="Book Title"
+        android:fontFamily="@font/bobby_jones"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        tools:ignore="HardcodedText,TextContrastCheck" />
+
+    <Button
+        android:id="@+id/button_remove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/transparent_button"
+        android:fontFamily="@font/bobby_jones"
+        android:text="REMOVE FROM FAVORITES"
+        android:textColor="@color/white"
+        tools:ignore="HardcodedText,TextContrastCheck" />
+</LinearLayout>

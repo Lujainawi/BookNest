@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/open_books"
+    tools:context=".About">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="25dp">
+
+        <TextView
+            android:id="@+id/title_about"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bobby_jones"
+            android:text="@string/about_the_app"
+            android:textSize="32sp"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"
+            android:paddingBottom="10dp"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bobby_jones"
+            android:text="@string/what_can_you_do"
+            android:textSize="24sp"
+            android:textColor="@color/white"
+            android:paddingTop="60dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/organize_your_personal_library_nwrite_and_read_book_reviews_ncreate_a_wishlist_of_books_npurchase_books_easily"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:textStyle="italic"
+            android:paddingBottom="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bobby_jones"
+            android:text="@string/how_to_get_started"
+            android:textSize="24sp"
+            android:textColor="@color/white"
+            android:paddingTop="25dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_1_sign_up_for_an_account_n2_browse_and_add_books_to_your_library_n3_write_reviews_and_share_thoughts_n4_enjoy_your_personalized_book_collection"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:textStyle="italic"
+            android:paddingBottom="10dp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bobby_jones"
+            android:text="@string/why_use_this_app"
+            android:textSize="24sp"
+            android:textColor="@color/white"
+            android:paddingTop="25dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/easy_to_use_interface_n_personalized_book_management_n_community_driven_book_reviews_n_secure_and_private_book_tracking"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:textStyle="italic"
+            android:paddingBottom="20dp" />
+
+
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="109dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/transparent_button"
+            android:fontFamily="@font/bobby_jones"
+            android:padding="15dp"
+            android:textStyle="bold"
+            android:text="@string/back"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+</ScrollView>

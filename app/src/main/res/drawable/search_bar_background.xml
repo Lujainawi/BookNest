@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!-- קביעת פינות מעוגלות -->
+    <corners android:radius="25dp"/>
+
+    <!-- צבע הרקע של ה-EditText -->
+    <solid android:color="#C5B8AC"/>
+
+    <!-- מסגרת חיצונית בצבע כהה יותר -->
+    <stroke android:width="2dp" android:color="#8D7B68"/>
+
+</shape>
