@@ -1,8 +1,11 @@
 package com.lujsom.booknest.adapters;
 
+import static android.content.ContentValues.TAG;
+
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -83,6 +86,10 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder
      * @param book The selected book object.
      */
     private void openBookDetails(Book book) {
+        if (book == null) {
+            Log.e(TAG, "Book is null");
+            return;
+        }
         Intent intent = new Intent(context, BookDetails.class);
         Bundle bundle = new Bundle();
 
@@ -109,7 +116,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder
     @Override
     public int getItemCount() {
         // Return the total number of books in the list
-        return bookList.size();
+        return bookList != null ? bookList.size() : 0;
     }
 
 

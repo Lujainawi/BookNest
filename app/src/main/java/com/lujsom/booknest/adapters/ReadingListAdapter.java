@@ -1,9 +1,12 @@
 package com.lujsom.booknest.adapters;
 
+import static android.content.ContentValues.TAG;
+
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -75,10 +78,14 @@ public class ReadingListAdapter extends RecyclerView.Adapter<ReadingListAdapter.
      */
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        if (bookList == null || position >= bookList.size()) {
+            Log.e(TAG, "Invalid book list or position");
+            return;
+        }
         Book book = bookList.get(position);
 
         // Set book title, fallback to "Unknown Title" if null
-        holder.bookTitle.setText(book.getTitle());
+        holder.bookTitle.setText(book.getTitle() != null ? book.getTitle() : "Unknown Title");
 
         // Load book image using Glide with placeholder and error handling
         Glide.with(context)
@@ -99,6 +106,10 @@ public class ReadingListAdapter extends RecyclerView.Adapter<ReadingListAdapter.
      * @param book The selected book object.
      */
     private void openBookDetails(Book book) {
+        if (book == null) {
+            Log.e(TAG, "Book object is null");
+            return;
+        }
         Intent intent = new Intent(context, BookDetails.class);
         intent.putExtra("book_id", book.getBookId());
         intent.putExtra("book_title", book.getTitle());
@@ -112,9 +123,16 @@ public class ReadingListAdapter extends RecyclerView.Adapter<ReadingListAdapter.
      * @param bookId   The unique identifier of the book.
      */
     private void removeBookFromReadingList(int position, String bookId) {
+        if (bookId == null || bookId.trim().isEmpty()) {
+            Log.e(TAG, "Invalid bookId for removal");
+            return;
+        }
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         String userId = FirebaseAuth.getInstance().getUid();
-        if (userId == null) return;
+        if (userId == null) {
+            Log.e(TAG, "User ID is null, cannot remove book");
+            return;
+        }
 
         db.collection("users").document(userId).collection("reading_list").document(bookId)
                 .delete()
@@ -152,7 +170,7 @@ public class ReadingListAdapter extends RecyclerView.Adapter<ReadingListAdapter.
      */
     @Override
     public int getItemCount() {
-        return bookList.size();
+        return bookList != null ? bookList.size() : 0;
     }
 
     /**

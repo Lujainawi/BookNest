@@ -1,9 +1,12 @@
 package com.lujsom.booknest.adapters;
 
+import static android.content.ContentValues.TAG;
+
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -77,6 +80,10 @@ public class ShoppingCartAdapter extends RecyclerView.Adapter<ShoppingCartAdapte
      */
     @Override
     public void onBindViewHolder(@NonNull CartViewHolder holder, int position) {
+        if (cartBooks == null || position >= cartBooks.size()) {
+            Log.e(TAG, "Invalid cart book list or position");
+            return;
+        }
         Book book = cartBooks.get(position);
 
         // Display book title, fallback to "Unknown Title" if null
@@ -125,7 +132,7 @@ public class ShoppingCartAdapter extends RecyclerView.Adapter<ShoppingCartAdapte
      */
     @Override
     public int getItemCount() {
-        return cartBooks.size();
+        return cartBooks != null ? cartBooks.size() : 0;
     }
 
     /**

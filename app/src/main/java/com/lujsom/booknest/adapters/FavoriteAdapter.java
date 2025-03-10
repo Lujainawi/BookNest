@@ -1,7 +1,10 @@
 package com.lujsom.booknest.adapters;
 
+import static android.content.ContentValues.TAG;
+
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -63,10 +66,14 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.ViewHo
     @Override
     //Populates the view components (title and image) with book details.
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        if (favoriteBooks == null || position >= favoriteBooks.size()) {
+            Log.e(TAG, "Invalid favorite book list or position");
+            return;
+        }
         Book book = favoriteBooks.get(position);
 
         // Set book title, fallback to "Unknown Title" if null
-        holder.bookTitle.setText(book.getTitle());
+        holder.bookTitle.setText(book.getTitle() != null ? book.getTitle() : "Unknown Title");
 
         // Load book image using Glide with placeholder and error handling
         Glide.with(context)

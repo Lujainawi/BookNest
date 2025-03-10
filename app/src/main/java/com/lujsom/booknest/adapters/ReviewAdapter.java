@@ -1,7 +1,10 @@
 package com.lujsom.booknest.adapters;
 
+import static android.content.ContentValues.TAG;
+
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -62,6 +65,10 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ReviewView
      */
     @Override
     public void onBindViewHolder(@NonNull ReviewViewHolder holder, int position) {
+        if (reviewList == null || position >= reviewList.size()) {
+            Log.e(TAG, "Invalid review list or position");
+            return;
+        }
         Review review = reviewList.get(position);
 
         // Set review data, using fallback values if necessary
@@ -109,7 +116,7 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ReviewView
      */
     @Override
     public int getItemCount() {
-        return reviewList.size();
+        return reviewList != null ? reviewList.size() : 0;
     }
 
     /**
