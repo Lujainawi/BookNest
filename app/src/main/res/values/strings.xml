@@ -40,6 +40,6 @@
     <string name="library">LIBRARY</string>
     <string name="no_books_in_your_reading_list">No books in your reading list</string>
     <string name="your_cart_is_empty">Your cart is empty</string>
-    <string name="_1_sign_up_for_an_account_n2_browse_and_add_books_to_your_library_n3_write_reviews_and_share_thoughts_n4_enjoy_your_personalized_book_collection">1.sign_up_for_an_account\n2.browse_and_add_books_to_your_library\n3.write_reviews_and_share_thoughts\n4.enjoy_your_personalized_book_collection</string>
-    <string name="organize_your_personal_library_nwrite_and_read_book_reviews_ncreate_a_wishlist_of_books_npurchase_books_easily">organize your personal library\nwrite and read book reviews\ncreate a wishlist of books\npurchase books easily</string>
+    <string name="organize_your_personal_library_n_write_and_read_book_reviews_n_create_a_wishlist_of_books_n_purchase_books_easily">- organize your personal library\n- write and read book reviews\n- create a wishlist of books\n- purchase books easily</string>
+    <string name="_1_sign_up_for_an_account_n2_browse_and_add_books_to_your_library_n3_write_reviews_and_share_thoughts_n4_enjoy_your_personalized_book_collection">1. sign up for an account\n2. browse and add books to your library\n3. write reviews and share thoughts\n4. enjoy your personalized book collection</string>
 </resources>

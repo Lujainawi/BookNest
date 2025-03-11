@@ -37,7 +37,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/organize_your_personal_library_nwrite_and_read_book_reviews_ncreate_a_wishlist_of_books_npurchase_books_easily"
+            android:text="@string/organize_your_personal_library_n_write_and_read_book_reviews_n_create_a_wishlist_of_books_n_purchase_books_easily"
             android:textSize="18sp"
             android:textColor="@color/white"
             android:textStyle="italic"
