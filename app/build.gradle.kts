@@ -1,6 +1,21 @@
+import java.io.FileInputStream
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     id("com.google.gms.google-services")
+}
+
+fun getApiKey(): String {
+    val localProperties = Properties()
+    val localPropertiesFile = rootProject.file("local.properties")
+
+    return if (localPropertiesFile.exists()) {
+        localProperties.load(FileInputStream(localPropertiesFile))
+        localProperties.getProperty("API_KEY", "")
+    } else {
+        ""
+    }
 }
 
 android {
@@ -16,8 +31,8 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
-        val googleBooksApiKey: String? = project.findProperty("GOOGLE_BOOKS_API_KEY") as String?
-        buildConfigField("String", "GOOGLE_BOOKS_API_KEY", "\"$googleBooksApiKey\"")
+
+        buildConfigField("String", "GOOGLE_BOOKS_API_KEY", "\"" + getApiKey() + "\"")
     }
 
     buildTypes {
@@ -63,3 +78,4 @@ dependencies {
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
 }
+

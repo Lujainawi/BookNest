@@ -44,7 +44,7 @@ public class BookDetails extends AppCompatActivity {
     private FirestoreHelper firestoreHelper;
     private boolean isFavorite = false, isInCart = false;
 
-    private static final String API_KEY = "AIzaSyADp0H1gYuMqyL_fKLXbXK5K9zbr-AktBw";
+    private static final String API_KEY = BuildConfig.GOOGLE_BOOKS_API_KEY;
 
     @SuppressLint("SetTextI18n")
     @Override

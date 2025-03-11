@@ -47,7 +47,7 @@ public class LibraryPage extends AppCompatActivity {
     private TextView usernameText;
     private FirestoreHelper firestoreHelper;
     private static final String TAG = "LibraryPage";
-    private static final String API_KEY = "AIzaSyADp0H1gYuMqyL_fKLXbXK5K9zbr-AktBw";
+    private static final String API_KEY = BuildConfig.GOOGLE_BOOKS_API_KEY;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
